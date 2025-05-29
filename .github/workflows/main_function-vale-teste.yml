@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://acrvaleteste.azurecr.io/
-        username: ${{ secrets.AzureAppService_ContainerUsername_c3f33d85b3704241bceca9a636fb85f9 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_70d784be470b40549ac66c6ea5987190 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_d0be6441ce584b66ba8b2331d107f095 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_38880af0c1aa46f58952f4cf44c3237e }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: acrvaleteste.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_c3f33d85b3704241bceca9a636fb85f9 }}/azure-functions:${{ github.sha }}
+        tags: acrvaleteste.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_d0be6441ce584b66ba8b2331d107f095 }}/function:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'function-vale-teste'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_40455efc90434aa89cb087789788ad0c }}
-        images: 'acrvaleteste.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_c3f33d85b3704241bceca9a636fb85f9 }}/azure-functions:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_f6a57b6269394212abf0c4f1f277b7f7 }}
+        images: 'acrvaleteste.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_d0be6441ce584b66ba8b2331d107f095 }}/function:${{ github.sha }}'
