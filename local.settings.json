@@ -1,0 +1,15 @@
+{
+"IsEncrypted": false,
+"Values": {
+  "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+  "FUNCTIONS_WORKER_RUNTIME": "node",
+  "AzureWebJobsFeatureFlags": "EnableWorkerIndexing",
+  "YOUR_CONNECTION_STRING": "YOUR_CONNECTION_STRING_VALUE",
+  "YOUR_APP_SETTING": "YOUR_APP_SETTING_VALUE"
+},
+"Host": {
+  "LocalHttpPort": 7071,
+  "CORS": "*",
+  "UseDevelopmentServer": true
+}
+}
